@@ -14,6 +14,7 @@ from utils.gradio_utils import format_cover_html
 from transformers.utils import logging
 from transformers.generation.utils import LogitsProcessorList, StoppingCriteriaList
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from modelscope import snapshot_download
 logger = logging.get_logger(__name__)
 
 model_chinese_name = "中文心理健康大模型"
@@ -37,13 +38,13 @@ customTheme = gr.themes.Default(
 #         await download(model_repo=model_repo, output=output)
 #     return output
 
-# model_id = 'xiexiaoshi/Mental_Health_Support_Chatbot'
-# model_name_or_path = snapshot_download(model_id, revision='master')
+model_id = 'xiexiaoshi/Mental_Health_Support_Chatbot'
+model_name_or_path = snapshot_download(model_id, revision='master')
 
 # OpenXLab
-model_name_or_path = './Mental_Health_Support_Chatbot'
-model_repo = "xiexiaoshi/Mental_Health_Support_Chatbot"
-download(model_repo=model_repo,output=model_name_or_path)
+# model_name_or_path = './Mental_Health_Support_Chatbot'
+# model_repo = "xiexiaoshi/Mental_Health_Support_Chatbot"
+# download(model_repo=model_repo,output=model_name_or_path)
 # model_name_or_path = '/nfs/volume-379-6/xiewenzhen/xtuner/datas/Tasks/merged'
 model = AutoModelForCausalLM.from_pretrained(model_name_or_path, trust_remote_code=True).to(torch.bfloat16).cuda()
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
