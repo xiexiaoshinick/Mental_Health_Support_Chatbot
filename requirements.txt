@@ -1,0 +1,9 @@
+modelscope==1.9.5
+torch==2.1.2
+transformers==4.36.2
+sentencepiece==0.1.99
+accelerate==0.24.1
+transformers_stream_generator==0.0.4
+openxlab==0.0.34
+tiktoken
+gradio==3.18.0
