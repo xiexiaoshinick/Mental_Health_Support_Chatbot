@@ -7,6 +7,7 @@ import traceback
 import torch
 from torch import nn
 import gradio as gr
+from openxlab.model import download
 from dataclasses import asdict, dataclass
 from typing import Callable, List, Optional
 from utils.gradio_utils import format_cover_html
@@ -31,17 +32,18 @@ customTheme = gr.themes.Default(
     primary_hue=gr.themes.utils.colors.blue,
     radius_size=gr.themes.utils.sizes.radius_none,
 )
-async def model_download(model_repo, output):
-    if not os.path.exists(output):
-        await download(model_repo=model_repo, output=output)
-    return output
+# async def model_download(model_repo, output):
+#     if not os.path.exists(output):
+#         await download(model_repo=model_repo, output=output)
+#     return output
 
 # model_id = 'xiexiaoshi/Mental_Health_Support_Chatbot'
 # model_name_or_path = snapshot_download(model_id, revision='master')
 
 # OpenXLab
+model_name_or_path = './Mental_Health_Support_Chatbot'
 model_repo = "xiexiaoshi/Mental_Health_Support_Chatbot"
-model_name_or_path = model_download(model_repo=model_repo, output='./Mental_Health_Support_Chatbot')
+download(model_repo=model_repo,output=model_name_or_path)
 # model_name_or_path = '/nfs/volume-379-6/xiewenzhen/xtuner/datas/Tasks/merged'
 model = AutoModelForCausalLM.from_pretrained(model_name_or_path, trust_remote_code=True).to(torch.bfloat16).cuda()
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
