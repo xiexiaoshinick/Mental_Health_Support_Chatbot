@@ -31,18 +31,18 @@ customTheme = gr.themes.Default(
     primary_hue=gr.themes.utils.colors.blue,
     radius_size=gr.themes.utils.sizes.radius_none,
 )
-# async def model_download(model_repo, output):
-#     if not os.path.exists(output):
-#         await download(model_repo=model_repo, output=output)
-#     return output
+async def model_download(model_repo, output):
+    if not os.path.exists(output):
+        await download(model_repo=model_repo, output=output)
+    return output
 
-# # model_id = 'Shanghai_AI_Laboratory/internlm2-chat-'+ str(level) +'b'
-# # model_name_or_path = snapshot_download(model_id, revision='master')
+# model_id = 'xiexiaoshi/Mental_Health_Support_Chatbot'
+# model_name_or_path = snapshot_download(model_id, revision='master')
 
-# # OpenXLab
-# model_repo = "OpenLMLab/internlm2-chat-7b"
-# model_name_or_path = model_download(model_repo=model_repo, output='./internlm2-chat-7b')
-model_name_or_path = '/nfs/volume-379-6/xiewenzhen/xtuner/datas/Tasks/merged'
+# OpenXLab
+model_repo = "xiexiaoshi/Mental_Health_Support_Chatbot"
+model_name_or_path = model_download(model_repo=model_repo, output='./Mental_Health_Support_Chatbot')
+# model_name_or_path = '/nfs/volume-379-6/xiewenzhen/xtuner/datas/Tasks/merged'
 model = AutoModelForCausalLM.from_pretrained(model_name_or_path, trust_remote_code=True).to(torch.bfloat16).cuda()
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
 
