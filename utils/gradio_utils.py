@@ -6,7 +6,6 @@ import re
 from urllib import parse
 
 import json
-import markdown
 from gradio.components import Chatbot as ChatBotBase
 
 # 图片本地路径转换为 base64 格式
