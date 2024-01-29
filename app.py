@@ -215,7 +215,7 @@ def generate_chat(input: str, history = None):
 demo = gr.Blocks(css='assets/appBot.css', theme=customTheme)
 with demo:
     gr.Markdown(
-        '# <center> \N{fire}中文心理健康对话大模型-训练营参赛作品 ([github star](https://github.com/modelscope/modelscope-agent/tree/main))</center>'  # noqa E501
+        '# <center> \N{fire}中文心理健康对话大模型-训练营参赛作品 ([github](https://github.com/xiexiaoshinick/Mental_Health_Support_Chatbot))</center>'  # noqa E501
     )
     draw_seed = random.randint(0, 1000000000)
     state = gr.State({'session_seed': draw_seed})
