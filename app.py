@@ -46,7 +46,7 @@ model_name_or_path = snapshot_download(model_id, revision='master')
 # model_repo = "xiexiaoshi/Mental_Health_Support_Chatbot"
 # download(model_repo=model_repo,output=model_name_or_path)
 # model_name_or_path = '/nfs/volume-379-6/xiewenzhen/xtuner/datas/Tasks/merged'
-model = AutoModelForCausalLM.from_pretrained(model_name_or_path, trust_remote_code=True，torch_dtype=torch.float16).cuda()
+model = AutoModelForCausalLM.from_pretrained(model_name_or_path,trust_remote_code=True,torch_dtype=torch.float16).cuda()
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
 
 @dataclass
