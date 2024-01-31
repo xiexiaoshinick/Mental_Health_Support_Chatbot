@@ -13,6 +13,9 @@
 
 中文心理健康对话大模型是基于InternLM2-7B-Chat微调后中文心理健康对话模型，可针对例如自我成长、情感、爱情问题、人际关系、行为、家庭、治疗、婚姻和职业等方面提供心理健康对话。
 模型可以提供共情和非判断性的回应，为用户提供情感支持。
+# 模型和线上演示demo
+- [模型](https://modelscope.cn/models/xiexiaoshi/Mental_Health_Support_Chatbot/summary)
+- [演示demo](https://openxlab.org.cn/apps/detail/xiexiaoshi/Mental_Health_Support_Chatbot)
 
 # 数据源
 
