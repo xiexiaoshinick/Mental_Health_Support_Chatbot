@@ -1,3 +1,14 @@
+<p align="center">
+ <img width="200px" src="./assets//logo.png" align="center" alt="GitHub Readme Stats" />
+ <h2 align="center">power by InternLM2-Chat</h2>
+ <p align="center">它可以提供关于自我成长、情感、爱情、人际关系等方面的心理健康对话，为用户提供非专业的支持和指导。</p>
+ <p align="center">
+	<img  src="https://img.shields.io/badge/gitHub-%E4%B8%AD%E6%96%87%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E5%A4%A7%E6%A8%A1%E5%9E%8B-brightgreen" />
+ </p>
+</p>
+
+---
+
 # Mentalhealth-心理健康大模型
 
 中文心理健康对话大模型是基于InternLM2-7B-Chat微调后中文心理健康对话模型，可针对例如自我成长、情感、爱情问题、人际关系、行为、家庭、治疗、婚姻和职业等方面提供心理健康对话。
