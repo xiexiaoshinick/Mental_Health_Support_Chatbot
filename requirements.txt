@@ -1,5 +1,5 @@
 modelscope==1.9.5
-torch==2.1.2
+torch==2.0.1
 transformers==4.36.2
 sentencepiece==0.1.99
 accelerate==0.24.1
